@@ -30,3 +30,15 @@ print(product[1][1])
 for p in product:
 	print(p)
 	print(p[0], '的價格', p[1])
+
+# 'abc' + '123' = 'abc123'
+# 'abc' * 3 = 'abcabcabc'
+
+# 寫入檔案
+# txt產生文字檔，csv產生excel(可自己生成)
+with open ('products.csv', 'w') as f:
+	for p in product:
+		# 用加法做字串合併
+		# 用逗點做區隔(若用excel就不會擠在同一格)
+		# 真正的寫入
+		f.write(p[0] + ',' + p[1] + '\n')
