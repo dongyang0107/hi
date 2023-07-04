@@ -34,9 +34,12 @@ for p in product:
 # 'abc' + '123' = 'abc123'
 # 'abc' * 3 = 'abcabcabc'
 
-# 寫入檔案
+# 寫入檔案(若沒有原檔也沒關係，電腦會自動生成新檔)
 # txt產生文字檔，csv產生excel(可自己生成)
-with open ('products.csv', 'w') as f:
+# 解決亂碼問題：encoding = 'utf-8'
+with open ('products.csv', 'w', encoding = 'utf-8') as f:
+	# 欄位名稱
+	f.write('商品, 價格\n')
 	for p in product:
 		# 用加法做字串合併
 		# 用逗點做區隔(若用excel就不會擠在同一格)
